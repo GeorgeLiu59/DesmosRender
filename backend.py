@@ -26,7 +26,7 @@ MAX_EXPR_PER_BLOCK = 7500 # Maximum lines per block, doesn't affect lines per fr
 
 FRAME_DIR = 'frames' # The folder where the frames are stored relative to this file
 FILE_EXT = 'png' # Extension for frame files
-COLOUR = '#2464b4' # Hex value of colour for graph output	
+COLOUR = '#6A0DAD' # Hex value of colour for graph output	
 
 BILATERAL_FILTER = False # Reduce number of lines with bilateral filter
 DOWNLOAD_IMAGES = False # Download each rendered frame automatically (works best in firefox)
