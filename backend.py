@@ -103,8 +103,8 @@ def get_latex(filename):
                 x2, y2 = segment.end_point
                 latex.append('((1-t)%f+t%f,(1-t)%f+t%f)' % (x0, x1, y0, y1))
                 latex.append('((1-t)%f+t%f,(1-t)%f+t%f)' % (x1, x2, y1, y2))
-                f.write('((1-t)%f+t%f,(1-t)%f+t%f)\n' % (x0, x1, y0, y1))
-                f.write('((1-t)%f+t%f,(1-t)%f+t%f)\n' % (x1, x2, y1, y2))
+                f.write('Calc.setExpression({latex: \"((1-t)%f+t%f,(1-t)%f+t%f)\"})\n' % (x0, x1, y0, y1))
+                f.write('Calc.setExpression({latex: \"((1-t)%f+t%f,(1-t)%f+t%f)\"})\n' % (x1, x2, y1, y2))
             else:
                 x1, y1 = segment.c1
                 x2, y2 = segment.c2
@@ -112,8 +112,8 @@ def get_latex(filename):
                 latex.append('((1-t)((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f))+t((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f)),\
                 (1-t)((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f))+t((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f)))' % \
                 (x0, x1, x1, x2, x1, x2, x2, x3, y0, y1, y1, y2, y1, y2, y2, y3))
-                f.write('((1-t)((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f))+t((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f)),\
-                (1-t)((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f))+t((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f)))\n' % \
+                f.write('Calc.setExpression({latex: \"((1-t)((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f))+t((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f)),\
+                (1-t)((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f))+t((1-t)((1-t)%f+t%f)+t((1-t)%f+t%f)))\"})\n' % \
                 (x0, x1, x1, x2, x1, x2, x2, x3, y0, y1, y1, y2, y1, y2, y2, y3))
             start = segment.end_point
     return latex
